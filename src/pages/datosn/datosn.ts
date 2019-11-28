@@ -43,16 +43,19 @@ export class DatosnPage {
       twitter: this.twitter,
       instagram: this.instagram
     };
+
     console.log(JSON.stringify(contacto));
 
     this.http.post('/proyecto/proyecto/',contacto)
     .subscribe(data=>{
       console.log(JSON.stringify(data));
       this.navCtrl.pop();
+
     },error=>{
       console.log(JSON.stringify(error));
       this.navCtrl.pop();
     });
+    
   }
 
 }

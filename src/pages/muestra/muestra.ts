@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HttpClient } from '@angular/common/http';
 
 /**
  * Generated class for the MuestraPage page.
@@ -22,7 +23,7 @@ export class MuestraPage {
   twitter:"";
   instagram:"";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private httpClient: HttpClient) {
     this.img = navParams.get('img');
     this.nombre = navParams.get('nombre');
     this.telefono = navParams.get('telefono');
@@ -36,5 +37,14 @@ export class MuestraPage {
     console.log('ionViewDidLoad MuestraPage');
   }
 
+  deleteContact(){
+    this.httpClient.post('/proyecto/proyecto/', {
+      email: this.correo
+    })
+      .subscribe(e => {
+        console.log('borrado');
+        this.navCtrl.pop();
+      });
+  }
 
 }
