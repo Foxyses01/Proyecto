@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title style="background-color:  #395756;">
+    <ion-title style="background-color:  #7CA982;">
       Proyecto
     </ion-title>
     <ion-buttons end>
@@ -9,21 +9,21 @@
           button
           icon-only
           (click)="clickAdd()"
-          style="background-color:  #395756;"
-        >
+          style="background-color:  #7CA982;"
+        class = "plus">
           <ion-icon name="add"></ion-icon>
         </button>
       </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding style="background-color:  #395756;">
+<ion-content padding style="background-color:  #0A090C;">
     <ion-list>
-      <ion-list-header style="background-color: #D5C7BC;">
+      <ion-list-header style="background-color: #F2C57C;" class="agd">
         Agenda
       </ion-list-header>
         <ion-item
-        *ngFor = "let contactos of contactos" style="background-color: #4C3B4D;">
+        *ngFor = "let contactos of contactos" style="background-color: #426A5A;">
           <ion-avatar item-start>
             <img src="{{contactos.img}}">
           </ion-avatar>
